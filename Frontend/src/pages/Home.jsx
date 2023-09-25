@@ -1,6 +1,9 @@
+import Navbar from "../components/Navbar"
+
 function Home() {
   return (
-    <div className="h-[500px] bg-blue-500 mx-auto flex justify-start  ">
+    <div className="h-screen flex justify-start">
+        <Navbar/>
         <h1 className="mx-aut">Welcome to E-revive</h1>
     </div>
   )
