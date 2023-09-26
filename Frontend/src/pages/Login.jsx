@@ -1,14 +1,29 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,Navigate } from "react-router-dom";
+import Axios from "axios";
+import Home from "../pages/Home";
 
 export const Login = () => {
   const [data, setData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
   const loginuser = (e) => {
     e.preventDefault();
+
+    Axios({
+      method: "POST",
+      data: {
+        username: data.username,
+        password: data.password,
+      },
+      withCredentials: true,
+      url: "http://localhost:4000/login",
+    }).then((res) => {
+      console.log(res);
+      <Navigate to="/home" />;
+    });
   };
   return (
     <div className="bg-[#F9FAFB] h-screen w-screen flex items-center">
@@ -25,14 +40,14 @@ export const Login = () => {
           className="bg-white shadow-xl p-10 flex flex-col gap-4 text-sm w-[320px]"
           onSubmit={loginuser}
         >
-          <label>Email</label>
+          <label>Username</label>
           <input
             className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2"
-            type="email"
-            placeholder="Enter email"
-            value={data.email}
+            type="text"
+            placeholder="Enter username"
+            value={data.username}
             onChange={(e) => {
-              setData({ ...data, email: e.target.value });
+              setData({ ...data, username: e.target.value });
             }}
           />
           <label>Password</label>
