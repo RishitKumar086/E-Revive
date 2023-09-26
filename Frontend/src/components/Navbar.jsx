@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white light:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 light:border-gray-600 text-lg font-bold">
       <div className="max-w-screen-xl h-[90px] flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="https://flowbite.com/" className="flex items-center">
+        <Link to="/home" className="flex items-center">
           <img
             src="https://www.gadgetronicx.com/e-waste/lhs-recycle-icon2/"
             className="h-8 mr-3"
@@ -13,7 +13,7 @@ const Navbar = () => {
           <span className="self-center text-2xl font-semibold whitespace-nowrap light:text-white">
             E-revive
           </span>
-        </a>
+        </Link>
         <div className="flex md:order-2">
           <button
             type="button"
@@ -24,7 +24,7 @@ const Navbar = () => {
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 light:text-gray-400 light:hover:bg-gray-700 light:focus:ring-gray-600"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center bg-bl text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 light:text-gray-400 light:hover:bg-gray-700 light:focus:ring-gray-600"
             aria-controls="navbar-sticky"
             aria-expanded="false"
           >

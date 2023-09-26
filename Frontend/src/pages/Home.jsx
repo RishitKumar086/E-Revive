@@ -1,10 +1,12 @@
 import Navbar from "../components/Navbar"
+import { Hero } from "../components/Hero"
 
 function Home() {
   return (
-    <div className="h-screen flex justify-start">
+    <div className="">
         <Navbar/>
-        <h1 className="mx-aut">Welcome to E-revive</h1>
+        <h1 className="mx-auto">Welcome to E-revive</h1>
+        <Hero/>
     </div>
   )
 }
