@@ -39,11 +39,11 @@ export const Register = () => {
           className="bg-white shadow-xl p-10 flex flex-col gap-4 text-sm w-[360px]"
           onSubmit={registeruser}
         >
-          <label>Name</label>
+          <label>Username</label>
           <input
             type="text"
             className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2"
-            placeholder="enter name"
+            placeholder="enter username"
             value={data.username}
             onChange={(e) => {
               setData({ ...data, username: e.target.value });
