@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import banner from "../assets/hero/banner.webp"
-
+import feature from "../assets/dotteds.png"
 export const Hero = () => {
 
   return (
@@ -20,6 +20,10 @@ export const Hero = () => {
 		<div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
 			<img src={banner} alt="banner" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
 		</div>
+	</div>
+	<div className="relative w-screen">
+	<img src={feature} className="left-[100px] top-[-50px] -z-50 absolute"/>
+	<img src={feature} className="right-[50px] top-[-30px] rotate-90 -z-50 absolute"/>
 	</div>
 </section>
   )

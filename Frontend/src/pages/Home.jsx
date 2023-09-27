@@ -29,7 +29,7 @@ function Home() {
 
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <PopUp showModal={showModal} setShowModal={setShowModal}/>
       <Hero />
       <div className="hidden md:flex w-full fixed bottom-[-4vh]  z-40  garbagetruck">

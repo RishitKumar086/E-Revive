@@ -21,7 +21,7 @@ export default function PopUp({ showModal, setShowModal }) {
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
-                <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                <div className="flex bg-green-600 text-white items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
                   <h3 className="text-3xl font-semibold">E waste</h3>
                   <button
                     className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
@@ -33,10 +33,10 @@ export default function PopUp({ showModal, setShowModal }) {
                   </button>
                 </div>
                 {/*body*/}
-                <div className="container mx-auto p-6">
-                  <div className="flex flex-col-reverse md:flex-row">
+                <div className="container  mx-auto p-6">
+                  <div className="flex flex-col-reverse items-center md:flex-row">
                     <div className="md:w-1/2 p-4">
-                      <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                      <p className="my-4 text-black-500 text-justify text-lg leading-relaxed">
                         E-waste is electronic products that are unwanted, not
                         working, and nearing or at the end of their “useful
                         life.” Computers, televisions, VCRs, stereos, copiers,
@@ -64,7 +64,7 @@ export default function PopUp({ showModal, setShowModal }) {
                     Close
                   </button>
                   <button
-                    className="bg-green-600 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    className="bg-green-700 text-white active:bg-emerald-500 hover:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
