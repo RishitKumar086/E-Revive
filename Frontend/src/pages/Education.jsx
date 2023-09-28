@@ -2,6 +2,7 @@ import img1 from "../assets/waste.jpg"
 import img2 from "../assets/cppy.png"
 import img3 from "../assets/popup-imagejpg.jpg";
 import { Footer } from '../components/Footer';
+import Video from "../components/Video"
 import Navbar from '../components/Navbar';
 
 const Education = () => {
@@ -23,6 +24,7 @@ const Education = () => {
 		</div>
 	</div>
     {/* <hr className='bg-stone-400  h-[2px] w-[80%] mx-auto mt-2'/> */}
+    <Video/>
 
     <div className="container max-w-[1000px]  rounded-lg flex flex-col justify-center p-4 mx-auto sm:py-4 lg:py-16 lg:flex-row lg:justify-between">
         

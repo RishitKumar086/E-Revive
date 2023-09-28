@@ -69,7 +69,7 @@ export const Register = () => {
               setData({ ...data, password: e.target.value });
             }}
           />
-          <Link to="/" className="font-bold text-emerald-600">
+          <Link to="/login" className="font-bold text-emerald-600">
             Login now
           </Link>
           <button

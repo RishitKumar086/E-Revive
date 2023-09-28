@@ -22,9 +22,10 @@ export const Login = () => {
       url: "http://localhost:4000/login",
     }).then((res) => {
       console.log(res);
-      <Navigate to="/home" />;
+      <Navigate to="/home"/>;
     });
   };
+  
   return (
     <div className="bg-[#F9FAFB] h-screen w-screen flex items-center">
       <div className="h-max mx-auto flex flex-col items-center">
