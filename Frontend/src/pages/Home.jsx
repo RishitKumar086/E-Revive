@@ -6,6 +6,8 @@ import React from "react";
 import { Footer } from "../components/Footer";
 import { useEffect } from "react";
 import PopUp from "../components/PopUp";
+import { Contact } from "./Contact";
+import { Service } from "../components/Services";
 
 function Home() {
   const [showModal, setShowModal] = React.useState(false);
@@ -39,6 +41,8 @@ function Home() {
           className="h-[20vh] bg-cover bg-center rounded-xl"
           />
       </div>
+      <Service/>
+      <Contact/>
       <Footer/>
     </>
   );

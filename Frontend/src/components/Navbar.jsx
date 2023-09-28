@@ -7,7 +7,7 @@ import { useContext } from "react";
 const Navbar = () => {
   const { isLoggedIn, login } = useContext(AuthContext);
   const navigate = useNavigate();
-  
+
   const handleLoginButtonClick = () => {
     // Redirect to the /login route and making isLoggedIn true
     login();
@@ -69,7 +69,7 @@ const Navbar = () => {
         <li>
           <Link
             to="/"
-            className="block py-2 pl-3 pr-4 text-white bg-green-700 rounded md:bg-transparent md:text-green-700 md:p-0 md:light:text-green-500"
+            className="block py-2 pl-3 pr-4 text-white bg-green-700 rounded md:bg-transparent md:text-green-700 md:p-0 md:light:text-green-500 font-semibold font-montserrat  hover:text-[#01796f] cursor-pointer nav"
             aria-current="page"
           >
             Home
@@ -103,6 +103,7 @@ const Navbar = () => {
           <Link
             to="#"
             className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:light:hover:text-green-500 light:text-white light:hover:bg-gray-700 light:hover:text-white md:light:hover:bg-transparent light:border-gray-700"
+              onClick={()=>document.getElementById("contact").scrollIntoView({behavior:"smooth"})}
           >
             Contact
           </Link>
