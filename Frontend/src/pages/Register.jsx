@@ -1,8 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import gsap from "gsap";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 
 export const Register = () => {
+  useEffect(() => {
+    // Animation code using GSAP
+    gsap.from(".animate", {
+      opacity: 0,
+      x: -250, // Slide in from the left
+      duration: 1.5,
+      ease: "power3.out", // Example easing function
+    });
+  }, []);
   const registeruser = (e) => {
     e.preventDefault();
 
@@ -25,7 +35,7 @@ export const Register = () => {
   });
 
   return (
-    <div className="bg-[#F9FAFB] h-screen w-screen flex items-center">
+    <div className="bg-[#F9FAFB] h-screen animate w-screen flex items-center">
       <div className="h-max mx-auto flex flex-col items-center">
         <img
           className="h-[40px] w-[47px] mb-5"

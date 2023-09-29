@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import gsap from "gsap";
 import { Link, useNavigate } from "react-router-dom";
 import Axios from "axios";
 import Home from "../pages/Home";
@@ -9,6 +10,16 @@ export const Login = () => {
     password: "",
   });
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Animation code using GSAP
+    gsap.from(".animate-this", {
+      opacity: 0,
+      x: -200, // Slide in from the left
+      duration: 1.5,
+      ease: "power3.out", // Example easing function
+    });
+  }, []);
 
   const loginuser = (e) => {
     e.preventDefault();
@@ -28,7 +39,7 @@ export const Login = () => {
   };
 
   return (
-    <div className="bg-[#F9FAFB] h-screen w-screen flex items-center">
+    <div className="bg-[#F9FAFB] animate-this h-screen w-screen flex items-center">
       <div className="h-max mx-auto flex flex-col items-center">
         <img
           className="h-[40px] w-[47px] mb-5"
