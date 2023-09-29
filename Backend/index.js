@@ -60,13 +60,8 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
-  console.log(req.user);
   res.locals.currentUser = req.user;
   next();
-});
-
-app.get("/", (req, res) => {
-  res.send("hello");
 });
 
 app.post("/register", async (req, res, next) => {
@@ -104,11 +99,11 @@ app.get("/logout", (req, res) => {
 });
 
 app.get('/api/isLoggedIn', (req, res) => {
-  // Check the user's authentication status
-  const isLoggedIn = req.isAuthenticated(); // You might use Passport.js or a similar middleware for authentication
-
+  const isLoggedIn = req.isAuthenticated();
   res.json({ isLoggedIn });
 });
+
+
 
 app.listen(4000, () => {
   console.log("Listening on port 4000");

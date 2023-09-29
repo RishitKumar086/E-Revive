@@ -20,7 +20,7 @@ const Navbar = () => {
         withCredentials: true,
         url: "http://localhost:4000/logout",
       }).then((res) => {
-        console.log(res);
+        window.location.reload();
       });
     }
   };

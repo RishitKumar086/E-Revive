@@ -15,7 +15,6 @@ const AuthProvider = ({ children }) => {
     }).then((res) => {
       setIsLoggedIn(res.data.isLoggedIn);
       user = res.data.isLoggedIn;
-      // console.log(res);
     });
     isLoggedIn ? setIsLoggedIn(user) : setIsLoggedIn(user);
   };
