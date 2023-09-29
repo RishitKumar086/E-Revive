@@ -9,6 +9,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   
   const handleLoginButtonClick = () => {
+    
     // Redirect to the /login route and making isLoggedIn true
     login();
     navigate('/login');

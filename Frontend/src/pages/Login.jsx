@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link,Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Axios from "axios";
 import Home from "../pages/Home";
 
@@ -8,6 +8,7 @@ export const Login = () => {
     username: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const loginuser = (e) => {
     e.preventDefault();
@@ -21,11 +22,11 @@ export const Login = () => {
       withCredentials: true,
       url: "http://localhost:4000/login",
     }).then((res) => {
-      console.log(res);
-      <Navigate to="/home"/>;
+      // console.log(res.locals.currentUser);
+      navigate("/");
     });
   };
-  
+
   return (
     <div className="bg-[#F9FAFB] h-screen w-screen flex items-center">
       <div className="h-max mx-auto flex flex-col items-center">
