@@ -38,7 +38,13 @@ export const Login = () => {
   };
 
   return (
+    
+  
     <div className="bg-[#F9FAFB] animate-this h-screen w-screen flex items-center">
+      <div class="w-1/1 h-screen hidden lg:block sm:h-80 md:h-80 lg:h-96 xl:h-112 2xl:h-128">
+  <img src="https://s3n.cashify.in/estore/c4ca24749e8948119e99b2302ac900dc.png " alt="Placeholder Image" class="object-cover w-full h-full"/>
+</div>
+     
       <div className="h-max mx-auto flex flex-col items-center">
         <img
           className="h-[40px] w-[47px] mb-5"
