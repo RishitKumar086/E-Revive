@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const LocalStrategy = require("passport-local");
 const MongoDBStore = require("connect-mongo");
+const ExpressError = require("./utils/ExpressError");
 
 mongoose
   .connect("mongodb://127.0.0.1:27017/auth_E-Revive")
@@ -98,12 +99,14 @@ app.get("/logout", (req, res) => {
   });
 });
 
-app.get('/api/isLoggedIn', (req, res) => {
+app.get("/api/isLoggedIn", (req, res) => {
   const isLoggedIn = req.isAuthenticated();
   res.json({ isLoggedIn });
 });
 
-
+app.all("*", (req, res, next) => {
+  next(new ExpressError("Page not found", 404));
+});
 
 app.listen(4000, () => {
   console.log("Listening on port 4000");
