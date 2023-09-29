@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link,Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Axios from "axios";
 import Home from "../pages/Home";
 
@@ -8,16 +8,7 @@ export const Login = () => {
     username: "",
     password: "",
   });
-
-  useEffect(() => {
-    // Animation code using GSAP
-    gsap.from('.animate-this', {
-      opacity: 0,
-      x: -200,  // Slide in from the left
-      duration: 1.5,
-      ease: 'power3.out', // Example easing function
-    });
-  }, []);
+  const navigate = useNavigate();
 
   const loginuser = (e) => {
     e.preventDefault();
