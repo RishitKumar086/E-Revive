@@ -59,6 +59,12 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use((req, res, next) => {
+  console.log(req.user);
+  res.locals.currentUser = req.user;
+  next();
+});
+
 app.get("/", (req, res) => {
   res.send("hello");
 });
@@ -88,6 +94,13 @@ app.post("/login", (req, res, next) => {
       });
     }
   })(req, res, next);
+});
+
+app.get("/logout", (req, res) => {
+  req.logOut((err) => {
+    if (err) return next(err);
+    res.send("Successfully Logged out");
+  });
 });
 
 app.listen(4000, () => {

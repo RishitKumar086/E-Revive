@@ -13,12 +13,10 @@ function Home() {
   const [showModal, setShowModal] = React.useState(false);
 
   useEffect(() => {
-    
-    setTimeout(()=>{
-      setShowModal(true)
+    setTimeout(() => {
+      setShowModal(true);
     }, 6000);
-
-  }, [])
+  }, []);
 
   gsap.to(".garbagetruck", {
     opacity: 100,
@@ -31,19 +29,19 @@ function Home() {
 
   return (
     <>
-      <Navbar/>
-      <PopUp showModal={showModal} setShowModal={setShowModal}/>
+      <Navbar />
+      <PopUp showModal={showModal} setShowModal={setShowModal} />
       <Hero />
       <div className="hidden md:flex w-full fixed bottom-[-4vh]  z-40  garbagetruck">
         <img
           src={truck}
           alt=""
           className="h-[20vh] bg-cover bg-center rounded-xl"
-          />
+        />
       </div>
-      <Service/>
-      <Contact/>
-      <Footer/>
+      <Service />
+      <Contact />
+      <Footer />
     </>
   );
 }

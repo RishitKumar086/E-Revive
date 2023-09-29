@@ -1,8 +1,7 @@
+import React from "react";
 import popUpImage from "../assets/popup-imagejpg.jpg";
 
 export default function PopUp({ showModal, setShowModal }) {
-
-
   return (
     <>
       {/* will remove this button later  */}

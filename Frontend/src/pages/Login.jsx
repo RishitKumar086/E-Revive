@@ -1,21 +1,23 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import gsap from "gsap";
-import { Link,Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Axios from "axios";
+import Home from "../pages/Home";
 
 export const Login = () => {
   const [data, setData] = useState({
     username: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Animation code using GSAP
-    gsap.from('.animate-this', {
+    gsap.from(".animate-this", {
       opacity: 0,
-      x: -200,  // Slide in from the left
+      x: -200, // Slide in from the left
       duration: 1.5,
-      ease: 'power3.out', // Example easing function
+      ease: "power3.out", // Example easing function
     });
   }, []);
 
@@ -31,11 +33,11 @@ export const Login = () => {
       withCredentials: true,
       url: "http://localhost:4000/login",
     }).then((res) => {
-      console.log(res);
-      <Navigate to="/home"/>;
+      // console.log(res.locals.currentUser);
+      navigate("/");
     });
   };
-  
+
   return (
     <div className="bg-[#F9FAFB] animate-this h-screen w-screen flex items-center">
       <div className="h-max mx-auto flex flex-col items-center">
