@@ -103,6 +103,13 @@ app.get("/logout", (req, res) => {
   });
 });
 
+app.get('/api/isLoggedIn', (req, res) => {
+  // Check the user's authentication status
+  const isLoggedIn = req.isAuthenticated(); // You might use Passport.js or a similar middleware for authentication
+
+  res.json({ isLoggedIn });
+});
+
 app.listen(4000, () => {
   console.log("Listening on port 4000");
 });
