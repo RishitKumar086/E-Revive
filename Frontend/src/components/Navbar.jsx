@@ -2,15 +2,27 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
+import Axios from "axios";
 
 const Navbar = () => {
   const { isLoggedIn, login } = useContext(AuthContext);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   const handleLoginButtonClick = () => {
     // Redirect to the /login route and making isLoggedIn true
-    login();
-    navigate("/login");
+    if (!isLoggedIn) {
+      login();
+      navigate("/login");
+    } else {
+      Axios({
+        method: "GET",
+        withCredentials: true,
+        url: "http://localhost:4000/logout",
+      }).then((res) => {
+        console.log(res);
+      });
+    }
   };
 
   return (
