@@ -104,11 +104,12 @@ export default function App() {
   function handleMarkerClick(event) {
     setShowModal(true);
     const id = event.payload;
-    text = `\n
+    let text = `\n
     Name: ${id}\n
     Pin Code : ${facilities[id].pinCode}\n
     Phone Number: ${facilities[id].phoneNo}\n
     `;
+    // console.log(text);
     setModalText(text);
   }
 
