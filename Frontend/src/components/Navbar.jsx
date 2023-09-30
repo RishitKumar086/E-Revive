@@ -9,6 +9,10 @@ const Navbar = () => {
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
+  const handleFacilityClick = () => {
+    navigate("/map");
+  };
+
   const handleLoginButtonClick = () => {
     // Redirect to the /login route and making isLoggedIn true
     if (!isLoggedIn) {
@@ -46,6 +50,10 @@ const Navbar = () => {
           >
             {isLoggedIn ? "Log Out" : "Log in"}
           </button>
+          {
+            isLoggedIn ?
+              <button onClick={handleFacilityClick} className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none  focus:ring-green-300 font-medium rounded-lg  px-4 py-2 text-center mr-3 md:mr-0 light:bg-green-600 light:hover:bg-green-700 light:focus:ring-green-800">Show Facilities</button> : null
+          }
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
@@ -104,8 +112,13 @@ const Navbar = () => {
             <li>
               <Link
                 to="#"
+<<<<<<< HEAD
                 onClick={()=>document.getElementById("services").scrollIntoView({behavior:"smooth"})}
                 className="block py-2 pl-3 pr-4 hover:underline hover:font-bold text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:light:hover:text-green-500 light:text-white light:hover:bg-gray-700 light:hover:text-white md:light:hover:bg-transparent light:border-gray-700"
+=======
+                onClick={() => document.getElementById("services").scrollIntoView({ behavior: "smooth" })}
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:light:hover:text-green-500 light:text-white light:hover:bg-gray-700 light:hover:text-white md:light:hover:bg-transparent light:border-gray-700"
+>>>>>>> 3561fed002a67288a639eb996b3116696d96053c
               >
                 Services
               </Link>
@@ -113,8 +126,13 @@ const Navbar = () => {
             <li>
               <Link
                 to="#"
+<<<<<<< HEAD
                 onClick={()=>document.getElementById("contact").scrollIntoView({behavior:"smooth"})}
                 className="block py-2 pl-3 pr-4 hover:underline text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:light:hover:text-green-500 light:text-white light:hover:bg-gray-700 light:hover:text-white md:light:hover:bg-transparent light:border-gray-700"
+=======
+                onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:light:hover:text-green-500 light:text-white light:hover:bg-gray-700 light:hover:text-white md:light:hover:bg-transparent light:border-gray-700"
+>>>>>>> 3561fed002a67288a639eb996b3116696d96053c
               >
                 Contact
               </Link>
