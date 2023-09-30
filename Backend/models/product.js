@@ -6,9 +6,17 @@ const ProductSchema = new Schema({
     type: String,
     required: true,
   },
-  modelnumber: {
+  description: {
     type: String,
-    required:true,
+    required: true,
+  },
+  category: {
+    type: String,
+    required: true,
+  },
+  purpose: {
+    type: String,
+    enum: ["Recycle", "Sell"],
   },
   owner: {
     type: Schema.Types.ObjectId,

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import gsap from "gsap";
 import { Link, useNavigate } from "react-router-dom";
 import Axios from "axios";
-import Home from "../pages/Home";
 
 export const Login = () => {
   const [data, setData] = useState({
@@ -38,8 +37,6 @@ export const Login = () => {
   };
 
   return (
-    
-  
     <div className="bg-[#F9FAFB] animate-this h-screen w-screen flex items-center">
       <div className="w-1/1 h-screen hidden lg:block sm:h-90 md:h-95 lg:h-99 xl:h-119 2xl:h-110">
   <img src="https://s3n.cashify.in/estore/c4ca24749e8948119e99b2302ac900dc.png " alt="Placeholder Image" className="object-cover w-full h-full"/>
