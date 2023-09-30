@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import gsap from "gsap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Axios from "axios";
 
 export const Register = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     // Animation code using GSAP
     gsap.from(".animate", {
@@ -25,7 +27,21 @@ export const Register = () => {
       },
       withCredentials: true,
       url: "http://localhost:4000/register",
-    }).then((res) => console.log(res));
+    })
+      .then((res) => {
+        console.log(res);
+        // Check if registration was successful (e.g., based on response status or data)
+        if (res.status === 200) {
+          navigate("/");
+        } else {
+          // Handle registration error, display a message, or redirect to an error page
+        }
+      })
+      .catch((error) => {
+        // Handle network or other errors
+        console.error(error);
+        // Redirect to an error page or display an error message
+      });
   };
 
   const [data, setData] = useState({

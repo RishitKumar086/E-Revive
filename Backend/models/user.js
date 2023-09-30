@@ -8,6 +8,10 @@ const UserSchema = new Schema({
     required: true,
     unique: true,
   },
+  alloted: {
+    type: Schema.Types.ObjectId,
+    ref: "Facility",
+  },
 });
 
 UserSchema.plugin(passportLocalMongoose);

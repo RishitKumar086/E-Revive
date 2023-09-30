@@ -10,10 +10,19 @@ const FacilitySchema = new Schema({
     type: Number,
     required: true,
   },
+  type: {
+    type: String,
+    enum: ["Point"], // Only 'Point' type is allowed
+    required: true,
+  },
   coordinates: {
-    type: [Number], // Array of two numbers [longitude, latitude]
+    type: [Number], // Array of two numbers [latitude,longitude]
     required: true,
     index: "2dsphere", // Create a 2dsphere index for geospatial queries
+  },
+  phoneNo: {
+    type: Number,
+    required: true,
   },
 });
 

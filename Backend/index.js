@@ -9,9 +9,12 @@ const session = require("express-session");
 const LocalStrategy = require("passport-local");
 const MongoDBStore = require("connect-mongo");
 const ExpressError = require("./utils/ExpressError");
+const catchAsync = require("./utils/catchAsync");
 
 mongoose
-  .connect("mongodb+srv://E-revive:vRjgYnBPuc5l5aDP@cluster0.eowvofp.mongodb.net/?retryWrites=true&w=majority")
+  .connect(
+    "mongodb+srv://E-revive:vRjgYnBPuc5l5aDP@cluster0.eowvofp.mongodb.net/?retryWrites=true&w=majority"
+  )
   .then(() => {
     console.log("Mongo Connection open");
   })
@@ -30,7 +33,8 @@ app.use(
 );
 
 const store = new MongoDBStore({
-  mongoUrl: "mongodb+srv://E-revive:vRjgYnBPuc5l5aDP@cluster0.eowvofp.mongodb.net/?retryWrites=true&w=majority",
+  mongoUrl:
+    "mongodb+srv://E-revive:vRjgYnBPuc5l5aDP@cluster0.eowvofp.mongodb.net/?retryWrites=true&w=majority",
   secret: "secret",
   touchAfter: 24 * 3600,
 });
@@ -65,19 +69,22 @@ app.use((req, res, next) => {
   next();
 });
 
-app.post("/register", async (req, res, next) => {
-  try {
-    const { username, email, password } = req.body;
-    const user = new User({ email, username });
-    const registeredUser = await User.register(user, password);
-    req.login(registeredUser, (err) => {
-      if (err) return next(err);
-      res.redirect("/");
-    });
-  } catch (e) {
-    console.log("Error", e.message);
-  }
-});
+app.post(
+  "/register",
+  catchAsync(async (req, res, next) => {
+    try {
+      const { username, email, password } = req.body;
+      const user = new User({ email, username });
+      const registeredUser = await User.register(user, password);
+      req.login(registeredUser, (err) => {
+        if (err) return next(err);
+        // res.redirect("/");
+      });
+    } catch (e) {
+      console.log("Error", e.message);
+    }
+  })
+);
 
 app.post("/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
