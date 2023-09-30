@@ -11,7 +11,7 @@ const MongoDBStore = require("connect-mongo");
 const ExpressError = require("./utils/ExpressError");
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/auth_E-Revive")
+  .connect("mongodb+srv://E-revive:vRjgYnBPuc5l5aDP@cluster0.eowvofp.mongodb.net/?retryWrites=true&w=majority")
   .then(() => {
     console.log("Mongo Connection open");
   })
@@ -30,7 +30,7 @@ app.use(
 );
 
 const store = new MongoDBStore({
-  mongoUrl: "mongodb://127.0.0.1:27017/auth_E-Revive",
+  mongoUrl: "mongodb+srv://E-revive:vRjgYnBPuc5l5aDP@cluster0.eowvofp.mongodb.net/?retryWrites=true&w=majority",
   secret: "secret",
   touchAfter: 24 * 3600,
 });
@@ -104,9 +104,9 @@ app.get("/api/isLoggedIn", (req, res) => {
   res.json({ isLoggedIn });
 });
 
-app.all("*", (req, res, next) => {
-  next(new ExpressError("Page not found", 404));
-});
+// app.all("*", (req, res, next) => {
+//   next(new ExpressError("Page not found", 404));
+// });
 
 app.listen(4000, () => {
   console.log("Listening on port 4000");
