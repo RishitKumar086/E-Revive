@@ -5,7 +5,7 @@ import { Register } from "./pages/Register"
 import { Login } from "./pages/Login"
 import Education from "./pages/Education"
 import { AuthProvider } from "./context/AuthContext"
-
+import Store from "./pages/Store"
 function App() {
   return (
     <AuthProvider>
@@ -14,6 +14,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/register" element={<Register/>} />
         <Route path="/education" element={<Education/>}/>
+        <Route path="/store" element={<Store/>}/>
       </Routes>
     </AuthProvider>
   )
