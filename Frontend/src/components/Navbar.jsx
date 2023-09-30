@@ -79,7 +79,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/"
-                className="block py-2 pl-3 pr-4 text-white bg-green-700 rounded md:bg-transparent md:text-green-700 md:p-0 md:light:text-green-500"
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:light:hover:text-green-500 light:text-white light:hover:bg-gray-700 light:hover:text-white md:light:hover:bg-transparent light:border-gray-700"
                 aria-current="page"
               >
                 Home
@@ -104,6 +104,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="#"
+                onClick={()=>document.getElementById("services").scrollIntoView({behavior:"smooth"})}
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:light:hover:text-green-500 light:text-white light:hover:bg-gray-700 light:hover:text-white md:light:hover:bg-transparent light:border-gray-700"
               >
                 Services
@@ -112,6 +113,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="#"
+                onClick={()=>document.getElementById("contact").scrollIntoView({behavior:"smooth"})}
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:light:hover:text-green-500 light:text-white light:hover:bg-gray-700 light:hover:text-white md:light:hover:bg-transparent light:border-gray-700"
               >
                 Contact
