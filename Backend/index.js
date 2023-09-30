@@ -10,6 +10,7 @@ const LocalStrategy = require("passport-local");
 const MongoDBStore = require("connect-mongo");
 const ExpressError = require("./utils/ExpressError");
 const catchAsync = require("./utils/catchAsync");
+const Facility = require("./models/facility");
 
 mongoose
   .connect(
@@ -109,6 +110,11 @@ app.get("/logout", (req, res) => {
 app.get("/api/isLoggedIn", (req, res) => {
   const isLoggedIn = req.isAuthenticated();
   res.json({ isLoggedIn });
+});
+
+app.get("/fetchFacility", async (req, res) => {
+  const facility = await Facility.find({});
+  res.json({ facility });
 });
 
 // app.all("*", (req, res, next) => {
