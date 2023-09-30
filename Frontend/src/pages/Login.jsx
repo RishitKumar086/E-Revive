@@ -41,8 +41,8 @@ export const Login = () => {
     
   
     <div className="bg-[#F9FAFB] animate-this h-screen w-screen flex items-center">
-      <div class="w-1/1 h-screen hidden lg:block sm:h-90 md:h-95 lg:h-99 xl:h-119 2xl:h-110">
-  <img src="https://s3n.cashify.in/estore/c4ca24749e8948119e99b2302ac900dc.png " alt="Placeholder Image" class="object-cover w-full h-full"/>
+      <div className="w-1/1 h-screen hidden lg:block sm:h-90 md:h-95 lg:h-99 xl:h-119 2xl:h-110">
+  <img src="https://s3n.cashify.in/estore/c4ca24749e8948119e99b2302ac900dc.png " alt="Placeholder Image" className="object-cover w-full h-full"/>
 </div>
      
       <div className="h-max mx-auto flex flex-col items-center">
