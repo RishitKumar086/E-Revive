@@ -127,10 +127,10 @@ export default function App() {
 
   return (
     <>
-      <div className="py-5 px-5 max-w-sm mx-auto bg-zinc-100 rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
+      <div className="m-3 p-3">
         <button
           onClick={handleLocationClick}
-          className="text-purple-600 py-5 px-5 justify-center text-1xl"
+          className="text-purple-600 justify-center text-1xl rounded-lg "
         >
           Find Location
         </button>
