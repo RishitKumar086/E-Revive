@@ -4,16 +4,6 @@ import popUpImage from "../assets/popup-imagejpg.jpg";
 export default function PopUp({ showModal, setShowModal }) {
   return (
     <>
-      {/* will remove this button later  */}
-      <div className="flex justify-center">
-        <button
-          className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none cursor-pointer focus:outline-none ease-linear mt-2 transition-all duration-150"
-          type="button"
-          onClick={() => setShowModal(true)}
-        >
-          Open PopUp
-        </button>
-      </div>
       {showModal ? (
         <>
           <div className="justify-center  items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
